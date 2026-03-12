@@ -1,4 +1,6 @@
-﻿namespace Online_Academy_Platform.Domain.Entities;
+﻿using Online_Academy_Platform.Domain.Enums;
+
+namespace Online_Academy_Platform.Domain.Entities;
 
 public class Attendance
 {
@@ -8,7 +10,7 @@ public class Attendance
 
     public int StudentId { get; set; }
 
-    public string Status { get; set; }
+    public AttendanceStatus Status { get; set; }
 
     public Lecture Lecture { get; set; }
 
