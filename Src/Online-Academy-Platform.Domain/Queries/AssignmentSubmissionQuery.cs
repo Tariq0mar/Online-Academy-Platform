@@ -14,6 +14,5 @@ public class AssignmentSubmissionQuery
     
     public List<SortCriteria<AssignmentSubmissionSortField>> Sorts { get; set; } = new();
     
-    public int Page { get; set; } = 1;
-    public int PageSize { get; set; } = 20;
+    public Pagination Pagination { get; set; } = new Pagination();
 }
