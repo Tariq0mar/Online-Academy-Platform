@@ -1,9 +1,9 @@
 using Online_Academy_Platform.Domain.Entities;
 using Online_Academy_Platform.Domain.Queries;
 
-namespace Online_Academy_Platform.Domain.Interfaces.Services;
+namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface IEnrollmentService: IService<Enrollment>
+public interface IEnrollmentRepository : IRepository<Enrollment>
 {
     Task<IEnumerable<Enrollment>> QueryAsync(EnrollmentQuery query);
 }
