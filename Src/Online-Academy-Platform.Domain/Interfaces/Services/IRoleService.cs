@@ -5,5 +5,5 @@ namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
 public interface IRoleService: IService<Role>
 {
-    Task<Role> QueryAsync(RoleQuery query);
+    Task<IEnumerable<Role>> QueryAsync(RoleQuery query);
 }
