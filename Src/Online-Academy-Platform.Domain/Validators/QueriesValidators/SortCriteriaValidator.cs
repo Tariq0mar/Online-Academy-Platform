@@ -12,7 +12,7 @@ public class SortCriteriaValidator<T> : AbstractValidator<SortCriteria<T>> where
             .WithMessage("Sort field must be a valid attribute value.");
 
         RuleFor(x => x.Direction)
-            .NotNull()
-            .WithMessage("Sort direction must be specified.");
+            .IsInEnum()
+            .WithMessage("Sort direction must be Asc or Desc.");
     }
 }

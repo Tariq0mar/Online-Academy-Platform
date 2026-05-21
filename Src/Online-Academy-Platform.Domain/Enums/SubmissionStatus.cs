@@ -2,8 +2,8 @@
 
 public enum SubmissionStatus
 {
-    Pending,   // waiting for grading
-    Graded,    // graded
-    Late,      // submitted after deadline
-    Rejected   // not accepted / invalid submission
+    Pending = 1,
+    Graded = 2,
+    Late = 3,
+    Rejected = 4
 }

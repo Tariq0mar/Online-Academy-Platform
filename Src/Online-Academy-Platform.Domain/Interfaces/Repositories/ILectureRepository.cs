@@ -3,7 +3,11 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface ILectureRepository : IRepository<Lecture>
+public interface ILectureRepository : IQueryableRepository<Lecture, LectureQuery>
 {
-    Task<IEnumerable<Lecture>> QueryAsync(LectureQuery query);
+    Task<IEnumerable<Lecture>> GetByCourseIdAsync(int courseId);
+
+    Task<bool> ExistsByCourseAndTitleAsync(int courseId, string title);
+
+    Task<bool> ExistsByCourseAndTitleAsync(int courseId, string title, int excludeLectureId);
 }

@@ -8,19 +8,19 @@ public class PaymentQueryValidator : AbstractValidator<PaymentQuery>
 {
     public PaymentQueryValidator()
     {
-        RuleFor(x => x.MinFOriginalAmount)
+        RuleFor(x => x.MinOriginalAmount)
             .GreaterThanOrEqualTo(0)
-            .When(x => x.MinFOriginalAmount.HasValue)
-            .WithMessage("MinFOriginalAmount must be non-negative.");
+            .When(x => x.MinOriginalAmount.HasValue)
+            .WithMessage("MinOriginalAmount must be non-negative.");
 
-        RuleFor(x => x.MaxFOriginalAmount)
+        RuleFor(x => x.MaxOriginalAmount)
             .GreaterThanOrEqualTo(0)
-            .When(x => x.MaxFOriginalAmount.HasValue)
-            .WithMessage("MaxFOriginalAmount must be non-negative.");
+            .When(x => x.MaxOriginalAmount.HasValue)
+            .WithMessage("MaxOriginalAmount must be non-negative.");
 
         RuleFor(x => x)
-            .Must(x => !x.MinFOriginalAmount.HasValue || !x.MaxFOriginalAmount.HasValue || x.MinFOriginalAmount <= x.MaxFOriginalAmount)
-            .WithMessage("MinFOriginalAmount cannot be greater than MaxFOriginalAmount.");
+            .Must(x => !x.MinOriginalAmount.HasValue || !x.MaxOriginalAmount.HasValue || x.MinOriginalAmount <= x.MaxOriginalAmount)
+            .WithMessage("MinOriginalAmount cannot be greater than MaxOriginalAmount.");
 
         RuleFor(x => x.MinFinalAmount)
             .GreaterThanOrEqualTo(0)
@@ -39,6 +39,21 @@ public class PaymentQueryValidator : AbstractValidator<PaymentQuery>
         RuleFor(x => x)
             .Must(x => !x.CreatedAfter.HasValue || !x.CreatedBefore.HasValue || x.CreatedAfter <= x.CreatedBefore)
             .WithMessage("CreatedAfter cannot be later than CreatedBefore.");
+
+        RuleFor(x => x.Currency)
+            .IsInEnum()
+            .When(x => x.Currency.HasValue)
+            .WithMessage("Currency must be a valid value.");
+
+        RuleFor(x => x.PaymentMethod)
+            .IsInEnum()
+            .When(x => x.PaymentMethod.HasValue)
+            .WithMessage("PaymentMethod must be a valid value.");
+
+        RuleFor(x => x.PaymentStatus)
+            .IsInEnum()
+            .When(x => x.PaymentStatus.HasValue)
+            .WithMessage("PaymentStatus must be a valid value.");
 
         RuleFor(x => x.Pagination).SetValidator(new PaginationValidator());
 

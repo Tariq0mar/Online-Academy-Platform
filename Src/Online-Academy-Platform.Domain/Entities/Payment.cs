@@ -6,9 +6,11 @@ public class Payment
 {
     public int Id { get; set; }
 
-    public int StudentId { get; set; }
+    public int UserId { get; set; }
 
     public int CourseId { get; set; }
+
+    public int? EnrollmentId { get; set; }
 
     public int? CouponId { get; set; }
 
@@ -24,13 +26,15 @@ public class Payment
 
     public PaymentStatus PaymentStatus { get; set; }
 
-    public string TransactionId { get; set; }
+    public required string TransactionId { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public User Student { get; set; }
+    public User User { get; set; } = null!;
 
-    public Course Course { get; set; }
+    public Course Course { get; set; } = null!;
 
-    public Coupon Coupon { get; set; }
+    public Enrollment? Enrollment { get; set; }
+
+    public Coupon? Coupon { get; set; }
 }

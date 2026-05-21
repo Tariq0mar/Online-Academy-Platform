@@ -4,8 +4,9 @@ namespace Online_Academy_Platform.Domain.Queries;
 
 public class EnrollmentQuery
 {
-    public int? StudentId { get; set; }
+    public int? UserId { get; set; }
     public int? CourseId { get; set; }
+    public EnrollmentStatus? Status { get; set; }
     public DateTime? EnrolledAfter { get; set; }
     public DateTime? EnrolledBefore { get; set; }
 

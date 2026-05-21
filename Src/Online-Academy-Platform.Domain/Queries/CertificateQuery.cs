@@ -4,7 +4,7 @@ namespace Online_Academy_Platform.Domain.Queries;
 
 public class CertificateQuery
 {
-    public int? StudentId { get; set; }
+    public int? UserId { get; set; }
     public int? CourseId { get; set; }
     public DateTime? IssuedAfter { get; set; }
     public DateTime? IssuedBefore { get; set; }

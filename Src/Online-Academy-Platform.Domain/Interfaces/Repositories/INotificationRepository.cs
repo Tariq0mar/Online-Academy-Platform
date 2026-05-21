@@ -3,7 +3,13 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface INotificationRepository : IRepository<Notification>
+public interface INotificationRepository : IQueryableRepository<Notification, NotificationQuery>
 {
-    Task<IEnumerable<Notification>> QueryAsync(NotificationQuery query);
+    Task<int> CountUnreadByUserIdAsync(int userId);
+
+    Task<IEnumerable<Notification>> GetUnreadByUserIdAsync(int userId);
+
+    Task MarkAsReadAsync(int notificationId);
+
+    Task MarkAllAsReadByUserIdAsync(int userId);
 }

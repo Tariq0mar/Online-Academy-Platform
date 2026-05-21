@@ -3,7 +3,13 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface ICourseInstructorService: IService<CourseInstructor>
+public interface ICourseInstructorService : ISearchableService<CourseInstructor, CourseInstructorQuery>
 {
-    Task<IEnumerable<CourseInstructor>> QueryAsync(CourseInstructorQuery query);
+    Task<CourseInstructor> AssignAsync(int courseId, int instructorId, bool isPrimary = false);
+
+    Task RemoveAsync(int courseId, int instructorId);
+
+    Task SetPrimaryInstructorAsync(int courseId, int instructorId);
+
+    Task<IEnumerable<CourseInstructor>> GetByCourseIdAsync(int courseId);
 }

@@ -3,7 +3,11 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface ICertificateService: IService<Certificate>
+public interface ICertificateService : ISearchableService<Certificate, CertificateQuery>
 {
-    Task<IEnumerable<Certificate>> QueryAsync(CertificateQuery query);
+    Task<Certificate> IssueAsync(int userId, int courseId, string certificateUrl);
+
+    Task<bool> HasCertificateAsync(int userId, int courseId);
+
+    Task<Certificate?> GetByUserAndCourseAsync(int userId, int courseId);
 }

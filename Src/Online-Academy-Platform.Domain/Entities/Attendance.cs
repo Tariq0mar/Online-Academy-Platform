@@ -8,11 +8,11 @@ public class Attendance
 
     public int LectureId { get; set; }
 
-    public int StudentId { get; set; }
+    public int UserId { get; set; }
 
-    public AttendanceStatus Status { get; set; }
+    public AttendanceStatus Status { get; set; } = AttendanceStatus.Present;
 
-    public Lecture Lecture { get; set; }
+    public Lecture Lecture { get; set; } = null!;
 
-    public User Student { get; set; }
+    public User User { get; set; } = null!;
 }

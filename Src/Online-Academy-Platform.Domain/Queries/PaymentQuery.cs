@@ -4,14 +4,15 @@ namespace Online_Academy_Platform.Domain.Queries;
 
 public class PaymentQuery
 {
-    public int? StudentId { get; set; }
+    public int? UserId { get; set; }
+    public int? EnrollmentId { get; set; }
     public int? CourseId { get; set; }
     public int? CouponId { get; set; }
     public Currency? Currency { get; set; }
     public PaymentMethod? PaymentMethod { get; set; }
     public PaymentStatus? PaymentStatus { get; set; }
-    public decimal? MinFOriginalAmount { get; set; }
-    public decimal? MaxFOriginalAmount { get; set; }
+    public decimal? MinOriginalAmount { get; set; }
+    public decimal? MaxOriginalAmount { get; set; }
     public decimal? MinFinalAmount { get; set; }
     public decimal? MaxFinalAmount { get; set; }
     public DateTime? CreatedAfter { get; set; }

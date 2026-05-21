@@ -6,9 +6,9 @@ public class Assignment
 
     public int CourseId { get; set; }
 
-    public string Title { get; set; }
+    public required string Title { get; set; }
 
-    public string Description { get; set; }
+    public required string Description { get; set; }
 
     public int MaxGrade { get; set; }
 
@@ -16,7 +16,7 @@ public class Assignment
 
     public DateTime CreatedAt { get; set; }
 
-    public Course Course { get; set; }
+    public Course Course { get; set; } = null!;
 
     public ICollection<AssignmentSubmission> Submissions { get; set; } = new List<AssignmentSubmission>();
 }

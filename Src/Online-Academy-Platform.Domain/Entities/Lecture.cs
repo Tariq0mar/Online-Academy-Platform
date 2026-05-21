@@ -6,17 +6,17 @@ public class Lecture
 
     public int CourseId { get; set; }
 
-    public string Title { get; set; }
+    public required string Title { get; set; }
 
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     public DateTime LectureDate { get; set; }
 
     public int DurationMinutes { get; set; }
 
-    public Course Course { get; set; }
+    public Course Course { get; set; } = null!;
 
-    public ICollection<LectureFile> Files = new List<LectureFile>();
+    public ICollection<LectureFile> Files { get; set; } = new List<LectureFile>();
 
-    public ICollection<Attendance> Attendances = new List<Attendance>();
+    public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
 }

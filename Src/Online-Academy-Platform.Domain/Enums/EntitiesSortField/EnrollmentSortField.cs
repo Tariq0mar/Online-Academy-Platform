@@ -1,8 +1,10 @@
 namespace Online_Academy_Platform.Domain.Enums;
 
-public enum CourseInstructorSortField
+public enum EnrollmentSortField
 {
     Id,
+    UserId,
+    Status,
     CourseId,
-    InstructorId
+    EnrolledAt
 }

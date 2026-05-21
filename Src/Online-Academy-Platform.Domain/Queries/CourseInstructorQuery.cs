@@ -6,6 +6,7 @@ public class CourseInstructorQuery
 {
     public int? CourseId { get; set; }
     public int? InstructorId { get; set; }
+    public bool? IsPrimary { get; set; }
 
     public List<SortCriteria<CourseInstructorSortField>> Sorts { get; set; } = new();
 

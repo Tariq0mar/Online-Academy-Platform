@@ -3,32 +3,21 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface IUserService
+public interface IUserService : ISearchableService<User, UserQuery>
 {
-    // Authentication
     Task<User?> LoginAsync(string email, string password);
 
     Task<User> RegisterAsync(User user);
 
     Task LogoutAsync(int userId);
 
-    // User retrieval
-    Task<User?> GetUserByIdAsync(int id);
+    Task<User?> GetByEmailAsync(string email);
 
-    Task<User?> GetUserByEmailAsync(string email);
+    Task ChangePasswordAsync(int userId, string currentPassword, string newPassword);
 
-    Task<IEnumerable<User>> GetAllUsersAsync();
+    Task ActivateAsync(int userId);
 
-    Task<IEnumerable<User>> QueryUsersAsync(UserQuery query);
-
-    // User management
-    Task UpdateUserAsync(User user);
-
-    Task DeleteUserAsync(int id);
-
-    Task ActivateUserAsync(int id);
-
-    Task DeactivateUserAsync(int id);
+    Task DeactivateAsync(int userId);
 
     Task<bool> EmailExistsAsync(string email);
 }

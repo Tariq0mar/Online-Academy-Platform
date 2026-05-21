@@ -1,5 +1,6 @@
 using FluentValidation;
 using Online_Academy_Platform.Domain.Entities;
+using Online_Academy_Platform.Domain.Enums;
 
 namespace Online_Academy_Platform.Domain.Validators.EntitiesValidators;
 
@@ -21,11 +22,13 @@ public class UserValidator : AbstractValidator<User>
             .EmailAddress()
             .WithMessage("Email must be a valid email address.");
 
-        RuleFor(u => u.Password)
+        RuleFor(u => u.PasswordHash)
             .NotEmpty()
-            .WithMessage("Password is required.")
-            .MinimumLength(8)
-            .WithMessage("Password must be at least 8 characters long.");
+            .WithMessage("PasswordHash is required.")
+            .MinimumLength(20)
+            .WithMessage("PasswordHash appears invalid (too short for a typical hash).")
+            .MaximumLength(500)
+            .WithMessage("PasswordHash must not exceed 500 characters.");
 
         RuleFor(u => u.Phone)
             .NotEmpty()
@@ -35,11 +38,12 @@ public class UserValidator : AbstractValidator<User>
 
         RuleFor(u => u.ProfilePicture)
             .MaximumLength(500)
+            .When(u => !string.IsNullOrEmpty(u.ProfilePicture))
             .WithMessage("ProfilePicture URL must not exceed 500 characters.");
 
-        RuleFor(u => u.RoleId)
-            .GreaterThan(0)
-            .WithMessage("RoleId must be a valid positive number.");
+        RuleFor(u => u.Role)
+            .IsInEnum()
+            .WithMessage("Role must be a valid UserRole (Admin, Instructor, or Student).");
 
         RuleFor(u => u.CreatedAt)
             .LessThanOrEqualTo(DateTime.Now)

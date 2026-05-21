@@ -11,9 +11,9 @@ public class AttendanceValidator : AbstractValidator<Attendance>
             .GreaterThan(0)
             .WithMessage("LectureId must be a valid positive number.");
 
-        RuleFor(a => a.StudentId)
+        RuleFor(a => a.UserId)
             .GreaterThan(0)
-            .WithMessage("StudentId must be a valid positive number.");
+            .WithMessage("UserId must be a valid positive number.");
 
         RuleFor(a => a.Status)
             .IsInEnum()

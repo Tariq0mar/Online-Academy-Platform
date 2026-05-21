@@ -7,13 +7,18 @@ public class PaymentValidator : AbstractValidator<Payment>
 {
     public PaymentValidator()
     {
-        RuleFor(p => p.StudentId)
+        RuleFor(p => p.UserId)
             .GreaterThan(0)
-            .WithMessage("StudentId must be a valid positive number.");
+            .WithMessage("UserId must be a valid positive number.");
 
         RuleFor(p => p.CourseId)
             .GreaterThan(0)
             .WithMessage("CourseId must be a valid positive number.");
+
+        RuleFor(p => p.EnrollmentId)
+            .GreaterThan(0)
+            .When(p => p.EnrollmentId.HasValue)
+            .WithMessage("EnrollmentId must be a valid positive number when provided.");
 
         RuleFor(p => p.OriginalAmount)
             .GreaterThanOrEqualTo(0)
