@@ -7,6 +7,6 @@ public enum UserSortField
     Email,
     Phone,
     Active,
-    RoleId,
+    Role,
     CreatedAt
 }

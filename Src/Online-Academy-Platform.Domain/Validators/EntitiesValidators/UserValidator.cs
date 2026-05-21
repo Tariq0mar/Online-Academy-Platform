@@ -1,5 +1,6 @@
 using FluentValidation;
 using Online_Academy_Platform.Domain.Entities;
+using Online_Academy_Platform.Domain.Enums;
 
 namespace Online_Academy_Platform.Domain.Validators.EntitiesValidators;
 
@@ -40,9 +41,9 @@ public class UserValidator : AbstractValidator<User>
             .When(u => !string.IsNullOrEmpty(u.ProfilePicture))
             .WithMessage("ProfilePicture URL must not exceed 500 characters.");
 
-        RuleFor(u => u.RoleId)
-            .GreaterThan(0)
-            .WithMessage("RoleId must be a valid positive number.");
+        RuleFor(u => u.Role)
+            .IsInEnum()
+            .WithMessage("Role must be a valid UserRole (Admin, Instructor, or Student).");
 
         RuleFor(u => u.CreatedAt)
             .LessThanOrEqualTo(DateTime.Now)

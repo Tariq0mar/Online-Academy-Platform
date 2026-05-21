@@ -1,8 +1,5 @@
 ﻿namespace Online_Academy_Platform.Domain.Entities;
 
-/// <summary>
-/// <see cref="Constants.EntityUniquenessRules.CertificateUserCourse"/>
-/// </summary>
 public class Certificate
 {
     public int Id { get; set; }

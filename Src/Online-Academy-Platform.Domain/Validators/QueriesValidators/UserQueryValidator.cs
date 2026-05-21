@@ -12,6 +12,11 @@ public class UserQueryValidator : AbstractValidator<UserQuery>
             .Must(x => !x.CreatedAfter.HasValue || !x.CreatedBefore.HasValue || x.CreatedAfter <= x.CreatedBefore)
             .WithMessage("CreatedAfter cannot be later than CreatedBefore.");
 
+        RuleFor(x => x.Role)
+            .IsInEnum()
+            .When(x => x.Role.HasValue)
+            .WithMessage("Role must be a valid UserRole.");
+
         RuleFor(x => x.Pagination).SetValidator(new PaginationValidator());
 
         RuleForEach(x => x.Sorts).SetValidator(new SortCriteriaValidator<UserSortField>());

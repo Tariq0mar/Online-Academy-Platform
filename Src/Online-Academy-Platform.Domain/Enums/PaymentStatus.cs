@@ -2,8 +2,8 @@
 
 public enum PaymentStatus
 {
-    Pending = 1,    // payment started, waiting confirmation
-    Completed = 2,  // successfully paid
-    Failed = 3,     // failed or declined
-    Cancelled = 4  // cancelled by user or system
+    Pending = 1,
+    Completed = 2,
+    Failed = 3,
+    Cancelled = 4
 }

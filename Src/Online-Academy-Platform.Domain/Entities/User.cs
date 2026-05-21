@@ -1,4 +1,6 @@
-﻿namespace Online_Academy_Platform.Domain.Entities;
+﻿using Online_Academy_Platform.Domain.Enums;
+
+namespace Online_Academy_Platform.Domain.Entities;
 
 public class User
 {
@@ -16,11 +18,9 @@ public class User
 
     public bool Active { get; set; }
 
-    public int RoleId { get; set; }
+    public UserRole Role { get; set; }
 
-    public DateTime CreatedAt { get; set; }
-
-    public Role Role { get; set; } = null!;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<CourseInstructor> CourseInstructorAssignments { get; set; } = new List<CourseInstructor>();
 
