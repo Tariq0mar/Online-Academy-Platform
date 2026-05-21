@@ -2,9 +2,6 @@
 
 namespace Online_Academy_Platform.Domain.Entities;
 
-/// <summary>
-/// <see cref="Constants.EntityUniquenessRules.AssignmentSubmissionAssignmentUser"/>
-/// </summary>
 public class AssignmentSubmission
 {
     public int Id { get; set; }
