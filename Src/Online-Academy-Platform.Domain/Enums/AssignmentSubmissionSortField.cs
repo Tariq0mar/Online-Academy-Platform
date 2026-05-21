@@ -4,7 +4,7 @@ public enum AssignmentSubmissionSortField
 {
     Id,
     AssignmentId,
-    StudentId,
+    UserId,
     Grade,
     SubmissionDate,
     Status

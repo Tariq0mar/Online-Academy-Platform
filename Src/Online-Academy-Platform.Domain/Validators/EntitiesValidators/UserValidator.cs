@@ -21,11 +21,11 @@ public class UserValidator : AbstractValidator<User>
             .EmailAddress()
             .WithMessage("Email must be a valid email address.");
 
-        RuleFor(u => u.Password)
+        RuleFor(u => u.PasswordHash)
             .NotEmpty()
-            .WithMessage("Password is required.")
+            .WithMessage("PasswordHash is required.")
             .MinimumLength(8)
-            .WithMessage("Password must be at least 8 characters long.");
+            .WithMessage("PasswordHash must be at least 8 characters long.");
 
         RuleFor(u => u.Phone)
             .NotEmpty()
@@ -35,6 +35,7 @@ public class UserValidator : AbstractValidator<User>
 
         RuleFor(u => u.ProfilePicture)
             .MaximumLength(500)
+            .When(u => !string.IsNullOrEmpty(u.ProfilePicture))
             .WithMessage("ProfilePicture URL must not exceed 500 characters.");
 
         RuleFor(u => u.RoleId)

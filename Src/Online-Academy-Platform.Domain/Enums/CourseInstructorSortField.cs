@@ -4,5 +4,7 @@ public enum CourseInstructorSortField
 {
     Id,
     CourseId,
-    InstructorId
+    InstructorId,
+    AssignedAt,
+    IsPrimary
 }

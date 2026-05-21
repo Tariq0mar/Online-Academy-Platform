@@ -8,9 +8,9 @@ public class LectureFile
 
     public int LectureId { get; set; }
 
-    public string FileUrl { get; set; }
+    public required string FileUrl { get; set; }
 
     public FileType FileType { get; set; }
 
-    public Lecture Lecture { get; set; }
+    public Lecture Lecture { get; set; } = null!;
 }

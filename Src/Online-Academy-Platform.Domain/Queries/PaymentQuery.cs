@@ -4,7 +4,8 @@ namespace Online_Academy_Platform.Domain.Queries;
 
 public class PaymentQuery
 {
-    public int? StudentId { get; set; }
+    public int? UserId { get; set; }
+    public int? EnrollmentId { get; set; }
     public int? CourseId { get; set; }
     public int? CouponId { get; set; }
     public Currency? Currency { get; set; }

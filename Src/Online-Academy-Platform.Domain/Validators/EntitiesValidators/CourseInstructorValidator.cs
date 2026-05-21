@@ -14,5 +14,9 @@ public class CourseInstructorValidator : AbstractValidator<CourseInstructor>
         RuleFor(ci => ci.InstructorId)
             .GreaterThan(0)
             .WithMessage("InstructorId must be a valid positive number.");
+
+        RuleFor(ci => ci.AssignedAt)
+            .LessThanOrEqualTo(DateTime.Now)
+            .WithMessage("AssignedAt cannot be in the future.");
     }
 }

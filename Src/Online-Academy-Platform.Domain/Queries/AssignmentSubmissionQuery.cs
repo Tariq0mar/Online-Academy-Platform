@@ -5,7 +5,7 @@ namespace Online_Academy_Platform.Domain.Queries;
 public class AssignmentSubmissionQuery
 {
     public int? AssignmentId { get; set; }
-    public int? StudentId { get; set; }
+    public int? UserId { get; set; }
     public SubmissionStatus? Status { get; set; }
     public int? MinGrade { get; set; }
     public int? MaxGrade { get; set; }

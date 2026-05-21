@@ -3,7 +3,7 @@ namespace Online_Academy_Platform.Domain.Enums;
 public enum CertificateSortField
 {
     Id,
-    StudentId,
+    UserId,
     CourseId,
     IssueDate
 }

@@ -12,6 +12,11 @@ public class EnrollmentQueryValidator : AbstractValidator<EnrollmentQuery>
             .Must(x => !x.EnrolledAfter.HasValue || !x.EnrolledBefore.HasValue || x.EnrolledAfter <= x.EnrolledBefore)
             .WithMessage("EnrolledAfter cannot be later than EnrolledBefore.");
 
+        RuleFor(x => x.Status)
+            .IsInEnum()
+            .When(x => x.Status.HasValue)
+            .WithMessage("Status must be a valid EnrollmentStatus.");
+
         RuleFor(x => x.Pagination).SetValidator(new PaginationValidator());
 
         RuleForEach(x => x.Sorts).SetValidator(new SortCriteriaValidator<EnrollmentSortField>());

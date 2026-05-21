@@ -8,7 +8,11 @@ public class CourseInstructor
 
     public int InstructorId { get; set; }
 
-    public User Instrcutor { get; set; }
+    public DateTime AssignedAt { get; set; }
 
-    public Course Course { get; set; }
+    public bool IsPrimary { get; set; }
+
+    public User Instructor { get; set; } = null!;
+
+    public Course Course { get; set; } = null!;
 }

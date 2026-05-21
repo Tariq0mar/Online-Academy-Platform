@@ -2,25 +2,28 @@
 
 namespace Online_Academy_Platform.Domain.Entities;
 
+/// <summary>
+/// <see cref="Constants.EntityUniquenessRules.AssignmentSubmissionAssignmentUser"/>
+/// </summary>
 public class AssignmentSubmission
 {
     public int Id { get; set; }
 
     public int AssignmentId { get; set; }
 
-    public int StudentId { get; set; }
+    public int UserId { get; set; }
 
-    public string SubmissionFile { get; set; }
+    public required string SubmissionFile { get; set; }
 
     public DateTime SubmissionDate { get; set; }
 
-    public int Grade { get; set; }
+    public int? Grade { get; set; }
 
-    public string Feedback { get; set; }
+    public string? Feedback { get; set; }
 
     public SubmissionStatus Status { get; set; }
 
-    public Assignment Assignment { get; set; }
+    public Assignment Assignment { get; set; } = null!;
 
-    public User Student { get; set; }
+    public User User { get; set; } = null!;
 }

@@ -7,13 +7,17 @@ public class EnrollmentValidator : AbstractValidator<Enrollment>
 {
     public EnrollmentValidator()
     {
-        RuleFor(e => e.StudentId)
+        RuleFor(e => e.UserId)
             .GreaterThan(0)
-            .WithMessage("StudentId must be a valid positive number.");
+            .WithMessage("UserId must be a valid positive number.");
 
         RuleFor(e => e.CourseId)
             .GreaterThan(0)
             .WithMessage("CourseId must be a valid positive number.");
+
+        RuleFor(e => e.Status)
+            .IsInEnum()
+            .WithMessage("Status must be a valid EnrollmentStatus.");
 
         RuleFor(e => e.EnrolledAt)
             .LessThanOrEqualTo(DateTime.Now)

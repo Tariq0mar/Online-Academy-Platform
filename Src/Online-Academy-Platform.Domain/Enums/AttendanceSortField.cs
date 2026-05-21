@@ -4,6 +4,6 @@ public enum AttendanceSortField
 {
     Id,
     LectureId,
-    StudentId,
+    UserId,
     Status
 }
