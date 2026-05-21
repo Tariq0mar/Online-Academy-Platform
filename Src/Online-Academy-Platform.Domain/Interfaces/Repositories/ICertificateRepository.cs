@@ -8,4 +8,8 @@ public interface ICertificateRepository : IQueryableRepository<Certificate, Cert
     Task<Certificate?> GetByUserAndCourseAsync(int userId, int courseId);
 
     Task<bool> ExistsByUserAndCourseAsync(int userId, int courseId);
+
+    Task<IEnumerable<Certificate>> GetByUserIdAsync(int userId);
+
+    Task<IEnumerable<Certificate>> GetByCourseIdAsync(int courseId);
 }

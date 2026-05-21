@@ -8,4 +8,8 @@ public interface ICouponRepository : IQueryableRepository<Coupon, CouponQuery>
     Task<Coupon?> GetByCodeAsync(string code);
 
     Task<bool> ExistsByCodeAsync(string code);
+
+    Task<bool> ExistsByCodeAsync(string code, int excludeCouponId);
+
+    Task IncrementUsedCountAsync(int couponId);
 }

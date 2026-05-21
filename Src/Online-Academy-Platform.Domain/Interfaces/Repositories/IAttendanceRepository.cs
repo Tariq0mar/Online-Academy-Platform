@@ -8,4 +8,8 @@ public interface IAttendanceRepository : IQueryableRepository<Attendance, Attend
     Task<Attendance?> GetByLectureAndUserAsync(int lectureId, int userId);
 
     Task<bool> ExistsByLectureAndUserAsync(int lectureId, int userId);
+
+    Task<IEnumerable<Attendance>> GetByLectureIdAsync(int lectureId);
+
+    Task<IEnumerable<Attendance>> GetByUserIdAsync(int userId);
 }
