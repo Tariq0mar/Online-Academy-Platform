@@ -24,8 +24,10 @@ public class UserValidator : AbstractValidator<User>
         RuleFor(u => u.PasswordHash)
             .NotEmpty()
             .WithMessage("PasswordHash is required.")
-            .MinimumLength(8)
-            .WithMessage("PasswordHash must be at least 8 characters long.");
+            .MinimumLength(20)
+            .WithMessage("PasswordHash appears invalid (too short for a typical hash).")
+            .MaximumLength(500)
+            .WithMessage("PasswordHash must not exceed 500 characters.");
 
         RuleFor(u => u.Phone)
             .NotEmpty()

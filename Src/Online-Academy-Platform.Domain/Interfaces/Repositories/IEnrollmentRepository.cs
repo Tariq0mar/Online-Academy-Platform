@@ -3,7 +3,9 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface IEnrollmentRepository : IRepository<Enrollment>
+public interface IEnrollmentRepository : IQueryableRepository<Enrollment, EnrollmentQuery>
 {
-    Task<IEnumerable<Enrollment>> QueryAsync(EnrollmentQuery query);
+    Task<Enrollment?> GetByUserAndCourseAsync(int userId, int courseId);
+
+    Task<bool> ExistsByUserAndCourseAsync(int userId, int courseId);
 }

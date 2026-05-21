@@ -3,7 +3,7 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface IRoleService: IService<Role>
+public interface IRoleService : ISearchableService<Role, RoleQuery>
 {
-    Task<IEnumerable<Role>> QueryAsync(RoleQuery query);
+    Task<Role?> GetByNameAsync(string name);
 }

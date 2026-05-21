@@ -3,7 +3,9 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface ICouponRepository : IRepository<Coupon>
+public interface ICouponRepository : IQueryableRepository<Coupon, CouponQuery>
 {
-    Task<IEnumerable<Coupon>> QueryAsync(CouponQuery query);
+    Task<Coupon?> GetByCodeAsync(string code);
+
+    Task<bool> ExistsByCodeAsync(string code);
 }

@@ -11,8 +11,8 @@ public class PaymentQuery
     public Currency? Currency { get; set; }
     public PaymentMethod? PaymentMethod { get; set; }
     public PaymentStatus? PaymentStatus { get; set; }
-    public decimal? MinFOriginalAmount { get; set; }
-    public decimal? MaxFOriginalAmount { get; set; }
+    public decimal? MinOriginalAmount { get; set; }
+    public decimal? MaxOriginalAmount { get; set; }
     public decimal? MinFinalAmount { get; set; }
     public decimal? MaxFinalAmount { get; set; }
     public DateTime? CreatedAfter { get; set; }

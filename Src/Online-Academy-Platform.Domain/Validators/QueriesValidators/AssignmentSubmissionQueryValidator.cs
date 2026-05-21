@@ -27,6 +27,11 @@ public class AssignmentSubmissionQueryValidator : AbstractValidator<AssignmentSu
                        x.SubmittedAfter <= x.SubmittedBefore)
             .WithMessage("SubmittedAfter cannot be later than SubmittedBefore.");
 
+        RuleFor(x => x.Status)
+            .IsInEnum()
+            .When(x => x.Status.HasValue)
+            .WithMessage("Status must be a valid SubmissionStatus.");
+
         RuleFor(x => x.Pagination).SetValidator(new PaginationValidator());
 
         RuleForEach(x => x.Sorts).SetValidator(new SortCriteriaValidator<AssignmentSubmissionSortField>());

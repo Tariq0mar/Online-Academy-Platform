@@ -3,7 +3,7 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface ILectureService: IService<Lecture>
+public interface ILectureService : ISearchableService<Lecture, LectureQuery>
 {
-    Task<IEnumerable<Lecture>> QueryAsync(LectureQuery query);
+    Task<IEnumerable<Lecture>> GetByCourseIdAsync(int courseId);
 }

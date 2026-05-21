@@ -3,7 +3,9 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface ICertificateRepository : IRepository<Certificate>
+public interface ICertificateRepository : IQueryableRepository<Certificate, CertificateQuery>
 {
-    Task<IEnumerable<Certificate>> QueryAsync(CertificateQuery query);
+    Task<Certificate?> GetByUserAndCourseAsync(int userId, int courseId);
+
+    Task<bool> ExistsByUserAndCourseAsync(int userId, int courseId);
 }

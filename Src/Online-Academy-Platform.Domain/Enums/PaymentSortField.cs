@@ -2,7 +2,7 @@ namespace Online_Academy_Platform.Domain.Enums;
 
 public enum PaymentSortField
 {
-    d,
+    Id,
     UserId,
     EnrollmentId,
     CourseId,

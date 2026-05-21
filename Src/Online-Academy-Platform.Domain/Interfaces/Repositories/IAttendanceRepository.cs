@@ -3,7 +3,9 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface IAttendanceRepository : IRepository<Attendance>
+public interface IAttendanceRepository : IQueryableRepository<Attendance, AttendanceQuery>
 {
-    Task<IEnumerable<Attendance>> QueryAsync(AttendanceQuery query);
+    Task<Attendance?> GetByLectureAndUserAsync(int lectureId, int userId);
+
+    Task<bool> ExistsByLectureAndUserAsync(int lectureId, int userId);
 }

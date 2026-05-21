@@ -3,7 +3,6 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface ICourseRepository : IRepository<Course>
+public interface ICourseRepository : IQueryableRepository<Course, CourseQuery>
 {
-    Task<IEnumerable<Course>> QueryAsync(CourseQuery query);
 }

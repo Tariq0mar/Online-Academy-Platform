@@ -3,7 +3,9 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Repositories;
 
-public interface IAssignmentSubmissionRepository : IRepository<AssignmentSubmission>
+public interface IAssignmentSubmissionRepository : IQueryableRepository<AssignmentSubmission, AssignmentSubmissionQuery>
 {
-    Task<IEnumerable<AssignmentSubmission>> QueryAsync(AssignmentSubmissionQuery query);
+    Task<AssignmentSubmission?> GetByAssignmentAndUserAsync(int assignmentId, int userId);
+
+    Task<bool> ExistsByAssignmentAndUserAsync(int assignmentId, int userId);
 }

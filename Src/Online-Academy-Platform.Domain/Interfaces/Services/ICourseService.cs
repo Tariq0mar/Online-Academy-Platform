@@ -1,9 +1,10 @@
 using Online_Academy_Platform.Domain.Entities;
+using Online_Academy_Platform.Domain.Enums;
 using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Domain.Interfaces.Services;
 
-public interface ICourseService: IService<Course>
+public interface ICourseService : ISearchableService<Course, CourseQuery>
 {
-    Task<IEnumerable<Course>> QueryAsync(CourseQuery query);
+    Task UpdateStatusAsync(int courseId, CourseStatus status);
 }

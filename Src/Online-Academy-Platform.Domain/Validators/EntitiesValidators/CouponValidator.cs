@@ -1,5 +1,6 @@
 using FluentValidation;
 using Online_Academy_Platform.Domain.Entities;
+using Online_Academy_Platform.Domain.Enums;
 
 namespace Online_Academy_Platform.Domain.Validators.EntitiesValidators;
 
@@ -19,6 +20,11 @@ public class CouponValidator : AbstractValidator<Coupon>
 
         RuleFor(c => c.DiscountValue)
             .GreaterThan(0).WithMessage("Discount value must be greater than 0.");
+
+        RuleFor(c => c.DiscountValue)
+            .LessThanOrEqualTo(100)
+            .When(c => c.DiscountType == DiscountType.Percentage)
+            .WithMessage("Percentage discount cannot exceed 100.");
 
         RuleFor(c => c.MaxUses)
             .GreaterThanOrEqualTo(0)
