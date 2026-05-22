@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Inf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Application", "Online-Academy-Platform.Application\Online-Academy-Platform.Application.csproj", "{D8627F39-3A24-4B73-9D0B-EF4B58A5D6C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Api", "Online-Academy-Platform.Api\Online-Academy-Platform.Api.csproj", "{C2AF8692-2DB2-43D0-A168-65F9189D2E60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,18 @@ Global
 		{5C68C6B0-9D04-4C28-AC5B-A1CB787ED105}.Release|x64.Build.0 = Release|Any CPU
 		{5C68C6B0-9D04-4C28-AC5B-A1CB787ED105}.Release|x86.ActiveCfg = Release|Any CPU
 		{5C68C6B0-9D04-4C28-AC5B-A1CB787ED105}.Release|x86.Build.0 = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|x64.Build.0 = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Debug|x86.Build.0 = Debug|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|x64.ActiveCfg = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|x64.Build.0 = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|x86.ActiveCfg = Release|Any CPU
+		{C2AF8692-2DB2-43D0-A168-65F9189D2E60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
