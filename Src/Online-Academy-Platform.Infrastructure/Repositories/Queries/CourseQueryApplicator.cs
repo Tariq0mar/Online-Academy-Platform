@@ -4,7 +4,7 @@ using Online_Academy_Platform.Domain.Queries;
 
 namespace Online_Academy_Platform.Infrastructure.Repositories.Queries;
 
-internal static class CourseQueryApplicatorx
+internal static class CourseQueryApplicator
 {
     public static IQueryable<Course> Apply(IQueryable<Course> query, CourseQuery parameters)
     {
