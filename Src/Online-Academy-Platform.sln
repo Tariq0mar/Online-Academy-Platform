@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Infrastructure", "Online-Academy-Platform.Infrastructure\Online-Academy-Platform.Infrastructure.csproj", "{5C68C6B0-9D04-4C28-AC5B-A1CB787ED105}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online-Academy-Platform.Application", "Online-Academy-Platform.Application\Online-Academy-Platform.Application.csproj", "{D8627F39-3A24-4B73-9D0B-EF4B58A5D6C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
